@@ -1,0 +1,573 @@
+{
+    "DataVersion": 0,
+    "Entities": [
+        {
+            "id": "{d839d954-8eca-42e7-ba1c-0f2948ba471e}",
+            "type": "Zone",
+            "lastEdited": 1755523170889500,
+            "name": "MS2_Zone2 (2)",
+            "position": {
+                "x": 0,
+                "y": 58.65137481689453,
+                "z": 7.3413238525390625
+            },
+            "dimensions": {
+                "x": 2221.380859375,
+                "y": 2221.380859375,
+                "z": 2221.380859375
+            },
+            "rotation": {
+                "x": 0.0000152587890625,
+                "y": -0.999420166015625,
+                "z": 0.0000762939453125,
+                "w": 0.0340733528137207
+            },
+            "created": 1755523170943008,
+            "lastEditedBy": "{d8d9caa2-70fa-460e-861b-2e523fff2b1c}",
+            "queryAACube": {
+                "x": -1923.772216796875,
+                "y": -1865.120849609375,
+                "z": -1916.430908203125,
+                "scale": 3847.54443359375
+            },
+            "grab": {
+                "grabbable": false,
+                "equippableLeftRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                },
+                "equippableRightRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                }
+            },
+            "damping": 0,
+            "angularDamping": 0,
+            "scriptTimestamp": 1642689724416,
+            "shapeType": "sphere",
+            "keyLight": {
+                "color": {
+                    "red": 227,
+                    "green": 152,
+                    "blue": 102
+                },
+                "intensity": 4,
+                "direction": {
+                    "x": 0.6063039898872375,
+                    "y": -0.34289780259132385,
+                    "z": -0.7175071835517883
+                },
+                "castShadows": true,
+                "shadowBias": 0.009999999776482582,
+                "shadowMaxDistance": 60
+            },
+            "ambientLight": {
+                "ambientIntensity": 1.2000000476837158,
+                "ambientURL": "https://ams3.digitaloceanspaces.com/doob-highfidelity/MeditationSpaceLarger/Models/kloppenheim_06_puresky_4k.jpg"
+            },
+            "skybox": {
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 255
+                },
+                "url": "https://ams3.digitaloceanspaces.com/doob-highfidelity/MeditationSpaceLarger/Models/kloppenheim_06_puresky_4k.jpg"
+            },
+            "haze": {
+                "hazeRange": 10000,
+                "hazeColor": {
+                    "red": 1,
+                    "green": 41,
+                    "blue": 41
+                },
+                "hazeGlareColor": {
+                    "red": 11,
+                    "green": 36,
+                    "blue": 31
+                },
+                "hazeEnableGlare": true,
+                "hazeGlareAngle": 180,
+                "hazeCeiling": -2,
+                "hazeBaseRef": -6,
+                "hazeBackgroundBlend": 0.8999999761581421
+            },
+            "bloom": {
+                "bloomThreshold": 0.5,
+                "bloomSize": 0.875
+            },
+            "ghostingAllowed": false,
+            "keyLightMode": "enabled",
+            "ambientLightMode": "enabled",
+            "skyboxMode": "enabled",
+            "bloomMode": "enabled",
+            "clientOnly": false,
+            "avatarEntity": false,
+            "localEntity": false,
+            "faceCamera": false,
+            "isFacingAvatar": false
+        },
+        {
+            "id": "{7f3f35fc-0b4d-4b40-9ced-d8e38fa267fa}",
+            "type": "Model",
+            "lastEdited": 1758177692094377,
+            "position": {
+                "x": 26.896854400634766,
+                "y": 13.160404205322266,
+                "z": 193.63247680664062
+            },
+            "dimensions": {
+                "x": 2,
+                "y": 0.2500000298023224,
+                "z": 0.0010000000474974513
+            },
+            "rotation": {
+                "x": -0.0000152587890625,
+                "y": -0.0000152587890625,
+                "z": -0.0000152587890625,
+                "w": 1
+            },
+            "created": 1758177375674913,
+            "lastEditedBy": "{975cc164-102a-481c-bb8d-f06e936fdbaf}",
+            "queryAACube": {
+                "x": -0.9915660619735718,
+                "y": 0.2748011350631714,
+                "z": -0.9500488042831421,
+                "scale": 2.0155646800994873
+            },
+            "grab": {
+                "grabbable": false,
+                "equippableLeftRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                },
+                "equippableRightRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                }
+            },
+            "damping": 0,
+            "angularDamping": 0,
+            "modelURL": "https://ams3.digitaloceanspaces.com/doob-highfidelity/MeditationSpaceLarger/SoundButtons/BreathingDeu.glb",
+            "blendshapeCoefficients": "{\n}\n",
+            "useOriginalPivot": true,
+            "animation": {
+                "allowTranslation": false
+            },
+            "clientOnly": false,
+            "avatarEntity": false,
+            "localEntity": false,
+            "faceCamera": false,
+            "isFacingAvatar": false
+        },
+        {
+            "id": "{bc943370-6794-4283-9d66-7ffe6cd873f6}",
+            "type": "Model",
+            "lastEdited": 1758177688111009,
+            "position": {
+                "x": 28.896854400634766,
+                "y": 11.160404205322266,
+                "z": 193.63247680664062
+            },
+            "dimensions": {
+                "x": 2,
+                "y": 0.5000000596046448,
+                "z": 0.0010000000474974513
+            },
+            "rotation": {
+                "x": -0.0000152587890625,
+                "y": -0.0000152587890625,
+                "z": -0.0000152587890625,
+                "w": 1
+            },
+            "created": 1758177654567899,
+            "lastEditedBy": "{975cc164-102a-481c-bb8d-f06e936fdbaf}",
+            "queryAACube": {
+                "x": -1.0307765007019043,
+                "y": -0.43147456645965576,
+                "z": 1.4216809272766113,
+                "scale": 2.0615530014038086
+            },
+            "grab": {
+                "grabbable": false,
+                "equippableLeftRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                },
+                "equippableRightRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                }
+            },
+            "damping": 0,
+            "angularDamping": 0,
+            "modelURL": "https://ams3.digitaloceanspaces.com/doob-highfidelity/MeditationSpaceLarger/SoundButtons/SeeMeditationEng.glb",
+            "blendshapeCoefficients": "{\n}\n",
+            "useOriginalPivot": true,
+            "animation": {
+                "allowTranslation": false
+            },
+            "clientOnly": false,
+            "avatarEntity": false,
+            "localEntity": false,
+            "faceCamera": false,
+            "isFacingAvatar": false
+        },
+        {
+            "id": "{80075825-521c-450f-afc1-c370863caf9a}",
+            "type": "Model",
+            "lastEdited": 1758177688111453,
+            "position": {
+                "x": 28.896854400634766,
+                "y": 13.160404205322266,
+                "z": 193.63247680664062
+            },
+            "dimensions": {
+                "x": 2,
+                "y": 0.2500000298023224,
+                "z": 0.0010000000474974513
+            },
+            "rotation": {
+                "x": -0.0000152587890625,
+                "y": -0.0000152587890625,
+                "z": -0.0000152587890625,
+                "w": 1
+            },
+            "created": 1758177522854623,
+            "lastEditedBy": "{975cc164-102a-481c-bb8d-f06e936fdbaf}",
+            "queryAACube": {
+                "x": -0.9938205480575562,
+                "y": 0.29257047176361084,
+                "z": 1.4232202768325806,
+                "scale": 2.0155646800994873
+            },
+            "grab": {
+                "grabbable": false,
+                "equippableLeftRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                },
+                "equippableRightRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                }
+            },
+            "damping": 0,
+            "angularDamping": 0,
+            "modelURL": "https://ams3.digitaloceanspaces.com/doob-highfidelity/MeditationSpaceLarger/SoundButtons/BreathingEng.glb",
+            "blendshapeCoefficients": "{\n}\n",
+            "useOriginalPivot": true,
+            "animation": {
+                "allowTranslation": false
+            },
+            "clientOnly": false,
+            "avatarEntity": false,
+            "localEntity": false,
+            "faceCamera": false,
+            "isFacingAvatar": false
+        },
+        {
+            "id": "{900b572c-e95e-4633-8a87-24925d413a22}",
+            "type": "Model",
+            "lastEdited": 1758177692094793,
+            "position": {
+                "x": 26.896854400634766,
+                "y": 11.160404205322266,
+                "z": 193.63247680664062
+            },
+            "dimensions": {
+                "x": 2,
+                "y": 0.5000000596046448,
+                "z": 0.0010000000474974513
+            },
+            "rotation": {
+                "x": -0.0000152587890625,
+                "y": -0.0000152587890625,
+                "z": -0.0000152587890625,
+                "w": 1
+            },
+            "created": 1758177461219533,
+            "lastEditedBy": "{975cc164-102a-481c-bb8d-f06e936fdbaf}",
+            "queryAACube": {
+                "x": -1.0160918235778809,
+                "y": -0.4506032466888428,
+                "z": -1.0307765007019043,
+                "scale": 2.0615530014038086
+            },
+            "grab": {
+                "grabbable": false,
+                "equippableLeftRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                },
+                "equippableRightRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                }
+            },
+            "damping": 0,
+            "angularDamping": 0,
+            "modelURL": "https://ams3.digitaloceanspaces.com/doob-highfidelity/MeditationSpaceLarger/SoundButtons/SeeMeditationDeu.glb",
+            "blendshapeCoefficients": "{\n}\n",
+            "useOriginalPivot": true,
+            "animation": {
+                "allowTranslation": false
+            },
+            "clientOnly": false,
+            "avatarEntity": false,
+            "localEntity": false,
+            "faceCamera": false,
+            "isFacingAvatar": false
+        },
+        {
+            "id": "{f071a933-967c-4a5a-aed0-ca8e3c3397b9}",
+            "type": "Model",
+            "lastEdited": 1758177717221139,
+            "position": {
+                "x": 10.896854400634766,
+                "y": 10.160404205322266,
+                "z": 193.63247680664062
+            },
+            "dimensions": {
+                "x": 2,
+                "y": 0.5000000596046448,
+                "z": 0.0010000000474974513
+            },
+            "rotation": {
+                "x": -0.0000152587890625,
+                "y": -0.0000152587890625,
+                "z": -0.0000152587890625,
+                "w": 1
+            },
+            "created": 1758176443851851,
+            "lastEditedBy": "{975cc164-102a-481c-bb8d-f06e936fdbaf}",
+            "queryAACube": {
+                "x": -0.9613051414489746,
+                "y": -1.0307765007019043,
+                "z": 0.20671892166137695,
+                "scale": 2.0615530014038086
+            },
+            "grab": {
+                "grabbable": false,
+                "equippableLeftRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                },
+                "equippableRightRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                }
+            },
+            "damping": 0,
+            "angularDamping": 0,
+            "modelURL": "https://ams3.digitaloceanspaces.com/doob-highfidelity/testing/rotateCube.glb",
+            "blendshapeCoefficients": "{\n}\n",
+            "useOriginalPivot": true,
+            "animation": {
+                "url": "https://ams3.digitaloceanspaces.com/doob-highfidelity/testing/rotateCube.glb",
+                "allowTranslation": false,
+                "currentFrame": 0,
+                "running": false,
+                "loop": false
+            },
+            "clientOnly": false,
+            "avatarEntity": false,
+            "localEntity": false,
+            "faceCamera": false,
+            "isFacingAvatar": false
+        },
+        {
+            "id": "{f071a933-967c-4a5a-aed0-ca8e3c3397b9}",
+            "type": "Model",
+            "lastEdited": 1758177717221139,
+            "position": {
+                "x": 27.896854400634766,
+                "y": 10.160404205322266,
+                "z": 193.63247680664062
+            },
+            "dimensions": {
+                "x": 2,
+                "y": 0.5000000596046448,
+                "z": 0.0010000000474974513
+            },
+            "rotation": {
+                "x": -0.0000152587890625,
+                "y": -0.0000152587890625,
+                "z": -0.0000152587890625,
+                "w": 1
+            },
+            "created": 1758176443851851,
+            "lastEditedBy": "{975cc164-102a-481c-bb8d-f06e936fdbaf}",
+            "queryAACube": {
+                "x": -0.9613051414489746,
+                "y": -1.0307765007019043,
+                "z": 0.20671892166137695,
+                "scale": 2.0615530014038086
+            },
+            "grab": {
+                "grabbable": false,
+                "equippableLeftRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                },
+                "equippableRightRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                }
+            },
+            "damping": 0,
+            "angularDamping": 0,
+            "modelURL": "https://ams3.digitaloceanspaces.com/doob-highfidelity/MeditationSpaceLarger/SoundButtons/Start.glb",
+            "blendshapeCoefficients": "{\n}\n",
+            "useOriginalPivot": true,
+            "clientOnly": false,
+            "avatarEntity": false,
+            "localEntity": false,
+            "faceCamera": false,
+            "isFacingAvatar": false
+        },
+        {
+            "id": "{53488311-58ba-4cfa-bd23-972b51f97227}",
+            "type": "Model",
+            "lastEdited": 1758177688111250,
+            "position": {
+                "x": 15.896854400634766,
+                "y": 11.160404205322266,
+                "z": 200.63247680664062
+            },
+            "dimensions": {
+                "x": 2,
+                "y": 0.2500000298023224,
+                "z": 0.0010000000474974513
+            },
+            "rotation": {
+                "x": -0.0000152587890625,
+                "y": -0.0000152587890625,
+                "z": -0.0000152587890625,
+                "w": 1
+            },
+            "created": 1758177564845460,
+            "lastEditedBy": "{975cc164-102a-481c-bb8d-f06e936fdbaf}",
+            "queryAACube": {
+                "x": -0.9875186681747437,
+                "y": -0.05220353603363037,
+                "z": 1.4325300455093384,
+                "scale": 2.0155646800994873
+            },
+            "grab": {
+                "grabbable": false,
+                "equippableLeftRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                },
+                "equippableRightRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                }
+            },
+            "damping": 0,
+            "angularDamping": 0,
+            "modelURL": "https://ams3.digitaloceanspaces.com/doob-highfidelity/testing/trigger_rotateCube.glb",
+            "blendshapeCoefficients": "{\n}\n",
+            "useOriginalPivot": true,
+            "animation": {
+                "allowTranslation": false
+            },
+            "clientOnly": false,
+            "avatarEntity": false,
+            "localEntity": false,
+            "faceCamera": false,
+            "isFacingAvatar": false
+        },
+        {
+            "id": "{26700130-9048-42f3-8384-e6884097a58b}",
+            "type": "Model",
+            "lastEdited": 1758177692094588,
+            "position": {
+                "x": 26.896854400634766,
+                "y": 12.160404205322266,
+                "z": 193.63247680664062
+            },
+            "dimensions": {
+                "x": 2,
+                "y": 0.2500000298023224,
+                "z": 0.0010000000474974513
+            },
+            "rotation": {
+                "x": -0.0000152587890625,
+                "y": -0.0000152587890625,
+                "z": -0.0000152587890625,
+                "w": 1
+            },
+            "created": 1758177414859051,
+            "lastEditedBy": "{975cc164-102a-481c-bb8d-f06e936fdbaf}",
+            "queryAACube": {
+                "x": -0.9998401403427124,
+                "y": -0.048283934593200684,
+                "z": -1.0046275854110718,
+                "scale": 2.0155646800994873
+            },
+            "grab": {
+                "grabbable": false,
+                "equippableLeftRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                },
+                "equippableRightRotation": {
+                    "x": -0.0000152587890625,
+                    "y": -0.0000152587890625,
+                    "z": -0.0000152587890625,
+                    "w": 1
+                }
+            },
+            "damping": 0,
+            "angularDamping": 0,
+            "modelURL": "https://ams3.digitaloceanspaces.com/doob-highfidelity/MeditationSpaceLarger/SoundButtons/BodyScanDeu.glb",
+            "blendshapeCoefficients": "{\n}\n",
+            "useOriginalPivot": true,
+            "animation": {
+                "allowTranslation": false
+            },
+            "clientOnly": false,
+            "avatarEntity": false,
+            "localEntity": false,
+            "faceCamera": false,
+            "isFacingAvatar": false
+        }
+    ],
+    "Id": "{aa86e41f-5f13-489a-a674-e2d1a0b90ca9}",
+    "Version": 133
+}
