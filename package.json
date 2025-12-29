@@ -11,7 +11,7 @@
         "dev": "npm run create-version && npm run copy-workers && npm run build-quasar-dev",
         "build-desktop": "cd desktop && npm run build",
         "dev-desktop": "cd desktop && npm run dev",
-        "build-quasar": "quasar build",
+        "build": "npm run create-version && npm run copy-workers && quasar build -m spa --skip-pkg",
         "build-quasar-dev": "quasar dev",
         "lint": "eslint --ext .js,.ts,.vue ./",
         "create-version": "node build_scripts/createVersion.js",
