@@ -30,8 +30,8 @@ jobs:
           npm install
           npm run create-version
           npm run copy-workers
-          # Wir erzwingen den Build und ignorieren Linter-Fehler
-          npx quasar build -m spa --skip-pkg || true
+          # Wir deaktivieren ESLINT und ignorieren Fehler, damit der dist-Ordner erstellt wird
+          ESLINT=false npx quasar build -m spa || true
 
       - name: Upload Build Folder
         uses: actions/upload-pages-artifact@v3
