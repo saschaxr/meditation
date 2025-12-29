@@ -16,6 +16,24 @@
         
         #thanks { display: none; color: #ffc107; font-size: 1.5em; margin-top: 50px; }
         .hidden { display: none; }
+		
+		button:hover {
+    filter: brightness(1.1); /* Leuchtet leicht auf beim Drüberfahren */
+    transform: translateY(-1px); /* Bewegt sich minimal hoch */
+}
+
+button:active {
+    transform: translateY(2px); /* Drückt sich beim Klick 2px nach unten */
+    filter: brightness(0.9); /* Wird kurz dunkler */
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.2); /* Innenschatten für "Tiefe" */
+}
+
+/* Visuelle Bestätigung: Den gewählten Button markieren */
+.selected {
+    outline: 3px solid white;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    transform: scale(1.05);
+}
     </style>
 </head>
 <body>
@@ -79,7 +97,18 @@
                 error: "Error sending data."
             }
         };
+function next(q, ansKey, btnElement) {
+    // 1. Alle Buttons dieser Frage-Box finden und Markierung entfernen
+    const parent = btnElement.parentElement;
+    parent.querySelectorAll('button').forEach(b => b.classList.remove('selected'));
+    
+    // 2. Den geklickten Button markieren
+    btnElement.classList.add('selected');
 
+    // 3. Deine bestehende Logik
+    antworten["frage" + q] = translations[currentLang]["a" + (ansKey === 'Auf jeden Fall' ? '1' : ansKey === 'Eher ja' ? '2' : '3')];
+    console.log("Q" + q + " saved");
+}
         function setLanguage(lang) {
             currentLang = lang;
             antworten.sprache = lang;
