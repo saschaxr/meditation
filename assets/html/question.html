@@ -64,6 +64,12 @@ button:active {
             <button class="btn-maybe" onclick="saveAndFinish('Eher ja')"><span class="a2"></span></button>
             <button class="btn-no" onclick="saveAndFinish('Eher nein')"><span class="a3"></span></button>
         </div>
+		<div class="question-box">
+            <span id="q4-text" class="question-text"></span><br>
+            <button class="btn-yes" onclick="saveAndFinish('Auf jeden Fall')"><span class="a1"></span></button>
+            <button class="btn-maybe" onclick="saveAndFinish('Eher ja')"><span class="a2"></span></button>
+            <button class="btn-no" onclick="saveAndFinish('Eher nein')"><span class="a3"></span></button>
+        </div>
     </div>
 
     <div id="thanks"></div>
@@ -76,8 +82,9 @@ button:active {
         const translations = {
             de: {
                 q1: "1. Fühlen Sie sich jetzt weniger gestresst als vor der Meditation?",
-                q2: "2. Hat Ihnen die Meditation gehollfen, sihc zu entspannen?",
+                q2: "2. Hat Ihnen die Meditation gehollfen, sich zu entspannen?",
                 q3: "3. Würden Sie erneut eine Meditation durchführen?",
+				q4: "4. Würden Sie diese Erfahrung weiterempfehlen?",
                 a1: "Auf jeden Fall",
                 a2: "Eher ja",
                 a3: "Eher nein",
@@ -89,6 +96,7 @@ button:active {
                 q1: "1. Do you feel less stressed now than before the meditation?",
                 q2: "2. Did the meditaiton help you to relax",
                 q3: "3. Would you do a meditation like this again?",
+				q4: "4. Would you recommend this experience to others?",
                 a1: "Definitely",
                 a2: "Mostly yes",
                 a3: "Mostly no",
@@ -117,6 +125,7 @@ function next(q, ansKey, btnElement) {
             document.getElementById('q1-text').innerText = translations[lang].q1;
             document.getElementById('q2-text').innerText = translations[lang].q2;
             document.getElementById('q3-text').innerText = translations[lang].q3;
+			document.getElementById('q4-text').innerText = translations[lang].q4;
             
             // Button Texte anpassen
             document.querySelectorAll('.a1').forEach(el => el.innerText = translations[lang].a1);
