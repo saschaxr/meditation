@@ -77,7 +77,7 @@ button:active {
     <script>
         const scriptURL = "https://script.google.com/macros/s/AKfycbwPQEVTV7u4VHnLSUXjfJoqOpq3djLD9r60U52Tp6a6hiPCW1GjvRtyNS5ZWLW5s-jG/exec"; // <--- HIER DEINE URL EINTRAGEN
         let currentLang = 'de';
-        let antworten = { frage1: "", frage2: "", frage3: "", sprache: "" };
+        let antworten = { frage1: "", frage2: "", frage3: "", frage4: "", sprache: "" };
 
         const translations = {
             de: {
@@ -144,7 +144,7 @@ function next(q, ansKey, btnElement) {
         }
 
         async function saveAndFinish(ansKey) {
-            next(3, ansKey); // Letzte Antwort speichern
+            next(4, ansKey); // Letzte Antwort speichern
 
             document.getElementById('survey').style.display = 'none';
             document.getElementById('thanks').innerText = translations[currentLang].sending;
