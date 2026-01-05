@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Survey</title>
     <style>
         body { font-family: sans-serif; background: #222; color: white; text-align: center; padding: 15px; }
-        .lang-switch { margin-bottom: 20px; }
-        .lang-btn { background: #555; font-size: 0.8em; padding: 5px 10px; }
-        .question-box { margin-bottom: 25px; border-bottom: 1px solid #444; padding-bottom: 15px; }
-        .question-text { font-weight: bold; margin-bottom: 10px; display: block; }
-        button { padding: 10px 15px; margin: 5px; cursor: pointer; border: none; border-radius: 5px; font-weight: bold; min-width: 100px; }
+        .container { max-width: 600px; margin: 0 auto; }
         
-        /* Farben für die 3 Antwort-Stufen */
-        .btn-yes { background-color: #28a745; color: white; } /* Auf jeden Fall */
-        .btn-maybe { background-color: #ffc107; color: black; } /* Eher ja */
-        .btn-no { background-color: #dc3545; color: white; } /* Eher nein */
+        h1 { color: #ffc107; font-size: 1.8em; margin-bottom: 20px; }
+        
+        /* Sprachauswahl am Anfang */
+        #lang-select { margin-top: 50px; }
+        .lang-btn { background: #555; color: white; font-size: 1.2em; padding: 20px 30px; border: none; border-radius: 10px; cursor: pointer; margin: 10px; min-width: 200px; }
+        .lang-btn:hover { background: #777; }
+
+        /* Fragebogen */
+        .question-box { margin-bottom: 25px; border-bottom: 1px solid #444; padding-bottom: 20px; }
+        .question-text { font-weight: bold; font-size: 1.1em; display: block; margin-bottom: 15px; }
+        
+        button.ans-btn { padding: 12px 18px; margin: 8px; cursor: pointer; border: none; border-radius: 5px; font-weight: bold; min-width: 110px; transition: opacity 0.2s; }
+        button.ans-btn:hover { opacity: 0.8; }
+        
+        .btn-yes { background-color: #28a745; color: white; } 
+        .btn-maybe { background-color: #ffc107; color: black; } 
+        .btn-no { background-color: #dc3545; color: white; } 
         
         #thanks { display: none; color: #ffc107; font-size: 1.5em; margin-top: 50px; }
         .hidden { display: none; }
@@ -20,110 +32,128 @@
 </head>
 <body>
 
-    <div id="lang-select" class="lang-switch">
-        <button class="lang-btn" onclick="setLanguage('de')">Deutsch 🇩🇪</button>
-        <button class="lang-btn" onclick="setLanguage('en')">English 🇺🇸</button>
+<div class="container">
+    <h1 id="main-title">Ihre Meinung / Your opinion</h1>
+
+    <div id="lang-select">
+        <button class="lang-btn" onclick="startSurvey('de')">Deutsch 🇩🇪</button>
+        <button class="lang-btn" onclick="startSurvey('en')">English 🇬🇧</button>
     </div>
 
     <div id="survey" class="hidden">
         <div class="question-box">
-            <span id="q1-text" class="question-text"></span><br>
-            <button class="btn-yes" onclick="next(1, 'Auf jeden Fall')"><span class="a1"></span></button>
-            <button class="btn-maybe" onclick="next(1, 'Eher ja')"><span class="a2"></span></button>
-            <button class="btn-no" onclick="next(1, 'Eher nein')"><span class="a3"></span></button>
+            <span id="q1-text" class="question-text"></span>
+            <button class="ans-btn btn-yes" onclick="saveAnswer(1, 'a1')"><span class="a1"></span></button>
+            <button class="ans-btn btn-maybe" onclick="saveAnswer(1, 'a2')"><span class="a2"></span></button>
+            <button class="ans-btn btn-no" onclick="saveAnswer(1, 'a3')"><span class="a3"></span></button>
         </div>
 
         <div class="question-box">
-            <span id="q2-text" class="question-text"></span><br>
-            <button class="btn-yes" onclick="next(2, 'Auf jeden Fall')"><span class="a1"></span></button>
-            <button class="btn-maybe" onclick="next(2, 'Eher ja')"><span class="a2"></span></button>
-            <button class="btn-no" onclick="next(2, 'Eher nein')"><span class="a3"></span></button>
+            <span id="q2-text" class="question-text"></span>
+            <button class="ans-btn btn-yes" onclick="saveAnswer(2, 'a1')"><span class="a1"></span></button>
+            <button class="ans-btn btn-maybe" onclick="saveAnswer(2, 'a2')"><span class="a2"></span></button>
+            <button class="ans-btn btn-no" onclick="saveAnswer(2, 'a3')"><span class="a3"></span></button>
         </div>
 
         <div class="question-box">
-            <span id="q3-text" class="question-text"></span><br>
-            <button class="btn-yes" onclick="saveAndFinish('Auf jeden Fall')"><span class="a1"></span></button>
-            <button class="btn-maybe" onclick="saveAndFinish('Eher ja')"><span class="a2"></span></button>
-            <button class="btn-no" onclick="saveAndFinish('Eher nein')"><span class="a3"></span></button>
+            <span id="q3-text" class="question-text"></span>
+            <button class="ans-btn btn-yes" onclick="saveAnswer(3, 'y')"><span class="y-text"></span></button>
+            <button class="ans-btn btn-no" onclick="saveAnswer(3, 'n')"><span class="n-text"></span></button>
+        </div>
+
+        <div class="question-box" style="border:none;">
+            <span id="q4-text" class="question-text"></span>
+            <button class="ans-btn btn-yes" onclick="saveAnswer(4, 'y', true)"><span class="y-text"></span></button>
+            <button class="ans-btn btn-no" onclick="saveAnswer(4, 'n', true)"><span class="n-text"></span></button>
         </div>
     </div>
 
     <div id="thanks"></div>
+</div>
 
-    <script>
-        const scriptURL = "https://script.google.com/macros/s/AKfycbwPQEVTV7u4VHnLSUXjfJoqOpq3djLD9r60U52Tp6a6hiPCW1GjvRtyNS5ZWLW5s-jG/exec"; // <--- HIER DEINE URL EINTRAGEN
-        let currentLang = 'de';
-        let antworten = { frage1: "", frage2: "", frage3: "", sprache: "" };
+<script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwPQEVTV7u4VHnLSUXjfJoqOpq3djLD9r60U52Tp6a6hiPCW1GjvRtyNS5ZWLW5s-jG/exec"; 
+    
+    let currentLang = 'de';
+    let antworten = { frage1: "", frage2: "", frage3: "", frage4: "", sprache: "" };
 
-        const translations = {
-            de: {
-                q1: "1. Fühlen Sie sich jetzt weniger gestresst als vor der Meditation?",
-                q2: "2. Hat Ihnen die Meditation gehollfen, sihc zu entspannen?",
-                q3: "3. Würden Sie erneut eine Meditation durchführen?",
-                a1: "Auf jeden Fall",
-                a2: "Eher ja",
-                a3: "Eher nein",
-                sending: "Sende Daten...",
-                done: "Vielen Dank für dein Feedback!",
-                error: "Fehler beim Senden."
-            },
-            en: {
-                q1: "1. Do you feel less stressed now than before the meditation?",
-                q2: "2. Did the meditaiton help you to relax",
-                q3: "3. Would you do a meditation like this again?",
-                a1: "Definitely",
-                a2: "Mostly yes",
-                a3: "Mostly no",
-                sending: "Sending data...",
-                done: "Thank you for your feedback!",
-                error: "Error sending data."
-            }
-        };
-
-        function setLanguage(lang) {
-            currentLang = lang;
-            antworten.sprache = lang;
-            
-            // UI Texte anpassen
-            document.getElementById('q1-text').innerText = translations[lang].q1;
-            document.getElementById('q2-text').innerText = translations[lang].q2;
-            document.getElementById('q3-text').innerText = translations[lang].q3;
-            
-            // Button Texte anpassen
-            document.querySelectorAll('.a1').forEach(el => el.innerText = translations[lang].a1);
-            document.querySelectorAll('.a2').forEach(el => el.innerText = translations[lang].a2);
-            document.querySelectorAll('.a3').forEach(el => el.innerText = translations[lang].a3);
-            
-            // Wechsel zum Fragebogen
-            document.getElementById('lang-select').classList.add('hidden');
-            document.getElementById('survey').classList.remove('hidden');
+    const translations = {
+        de: {
+            q1: "1. Fühlen Sie sich jetzt weniger gestresst als vor der Meditation?",
+            q2: "2. Hat Ihnen die Meditation geholfen, sich zu entspannen?",
+            q3: "3. Würden Sie erneut eine Meditation durchführen?",
+            q4: "4. Würden Sie diese Erfahrung weiterempfehlen?",
+            a1: "Auf jeden Fall", a2: "Eher ja", a3: "Eher nein",
+            y: "Ja", n: "Nein",
+            sending: "Sende Daten...", done: "Vielen Dank für dein Feedback!", error: "Fehler beim Senden."
+        },
+        en: {
+            q1: "1. Do you feel less stressed now than before the meditation?",
+            q2: "2. Did the meditation help you to relax?",
+            q3: "3. Would you do a meditation like this again?",
+            q4: "4. Would you recommend this experience to others?",
+            a1: "Definitely", a2: "Rather yes", a3: "Rather no",
+            y: "Yes", n: "No",
+            sending: "Sending data...", done: "Thank you for your feedback!", error: "Error sending data."
         }
+    };
 
-        function next(q, ansKey) {
-            // Wir speichern immer den deutschen Key oder den übersetzten Text
-            antworten["frage" + q] = translations[currentLang]["a" + (ansKey === 'Auf jeden Fall' ? '1' : ansKey === 'Eher ja' ? '2' : '3')];
-            console.log("Q" + q + " saved");
+    function startSurvey(lang) {
+        currentLang = lang;
+        antworten.sprache = lang;
+        
+        // Texte setzen
+        document.getElementById('q1-text').innerText = translations[lang].q1;
+        document.getElementById('q2-text').innerText = translations[lang].q2;
+        document.getElementById('q3-text').innerText = translations[lang].q3;
+        document.getElementById('q4-text').innerText = translations[lang].q4;
+        
+        document.querySelectorAll('.a1').forEach(el => el.innerText = translations[lang].a1);
+        document.querySelectorAll('.a2').forEach(el => el.innerText = translations[lang].a2);
+        document.querySelectorAll('.a3').forEach(el => el.innerText = translations[lang].a3);
+        document.querySelectorAll('.y-text').forEach(el => el.innerText = translations[lang].y);
+        document.querySelectorAll('.n-text').forEach(el => el.innerText = translations[lang].n);
+        
+        // Wechseln
+        document.getElementById('lang-select').classList.add('hidden');
+        document.getElementById('survey').classList.remove('hidden');
+    }
+
+    function saveAnswer(qNum, key, isLast = false) {
+        antworten["frage" + qNum] = translations[currentLang][key];
+        
+        // Optische Deaktivierung der beantworteten Frage
+        const boxes = document.querySelectorAll('.question-box');
+        boxes[qNum-1].style.opacity = "0.3";
+        boxes[qNum-1].style.pointerEvents = "none";
+
+        if (isLast) {
+            sendData();
         }
+    }
 
-        async function saveAndFinish(ansKey) {
-            next(3, ansKey); // Letzte Antwort speichern
+    async function sendData() {
+        document.getElementById('survey').classList.add('hidden');
+        const thanksDiv = document.getElementById('thanks');
+        thanksDiv.innerText = translations[currentLang].sending;
+        thanksDiv.style.display = 'block';
 
-            document.getElementById('survey').style.display = 'none';
-            document.getElementById('thanks').innerText = translations[currentLang].sending;
-            document.getElementById('thanks').style.display = 'block';
-
-            try {
-                await fetch(scriptURL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    body: JSON.stringify(antworten),
-                    headers: { 'Content-Type': 'application/json' }
-                });
-                document.getElementById('thanks').innerText = translations[currentLang].done;
-            } catch (e) {
-                document.getElementById('thanks').innerText = translations[currentLang].error;
-            }
+        try {
+            await fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify(antworten),
+                headers: { 'Content-Type': 'application/json' }
+            });
+            thanksDiv.innerText = translations[currentLang].done;
+            
+            // Automatischer Reset nach 4 Sekunden für den nächsten Nutzer
+            setTimeout(() => { location.reload(); }, 4000);
+        } catch (e) {
+            thanksDiv.innerText = translations[currentLang].error;
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
